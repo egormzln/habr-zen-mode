@@ -1,0 +1,49 @@
+{
+  "manifest_version": 3,
+  "name": "Habr Zen Mode",
+  "version": "1.0.0",
+  "description": "Zen-режим для habr.com: убирает лишние блоки и ставит статью по центру.",
+  "permissions": [
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Habr Zen Mode (Alt+Shift+Z)",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "commands": {
+    "toggle-zen": {
+      "suggested_key": {
+        "default": "Alt+Shift+Z"
+      },
+      "description": "Включить/выключить zen-режим"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://habr.com/*"
+      ],
+      "css": [
+        "zen.css"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ]
+}

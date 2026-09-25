@@ -1,0 +1,12 @@
+/* Правая колонка: «Информация», «Ссылки», «Блог на Хабре», «Истории», реклама */
+html.habr-zen .tm-page__sidebar {
+  display: none !important;
+}
+
+/* Основная колонка: на всю ширину без учёта сайдбара и по центру */
+html.habr-zen .tm-page__main_has-sidebar {
+  flex: 1 1 auto !important;
+  max-width: 860px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
